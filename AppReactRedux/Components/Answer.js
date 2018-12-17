@@ -11,24 +11,25 @@ export default class Answer extends React.Component {
 	emptyQuestion(question){
 		if (typeof question === "undefined"){
 			return (
-				<Text style={styles.text}>no existen preguntas.</Text>
+				<Text key='noPreguntas' style={styles.text}>no existen preguntas.</Text>
 				);
 		}else{
 			return (
-				<View style={styles.box}>
-					<Text style={styles.smallText}>Su respuesta:</Text>
-					<TextInput style={styles.textInput} placeholder="Mi respuesta" value={question.userAnswer || ""} onChangeText={(e)=>{
-			 			this.props.onQuestionAnswer(e.target.value);
-			 		}}/>
+				<View key="answerview" style={styles.box}>
+					<Text key="surespuesta"  style={styles.smallText}>Su respuesta:</Text>
+					<TextInput key="textinput" style={styles.textInput} placeholder="Mi respuesta" value={question.userAnswer || ""} onChangeText={(text) =>{
+						this.props.onQuestionAnswer(text);
+					}}/>
 				</View>
 				);
 		}
 	}
 
+
 	gameEnded(isFinished,score,question){
 	if (isFinished){
 			return(
-			<Text style={styles.text}>
+			<Text key='score' style={styles.text}>
 				Su puntuación es de: {score}/{this.props.questions.length} puntos.
 			</Text>
 			);

@@ -16,11 +16,11 @@ export default class Content extends React.Component {
 	emptyQuestion(question){
 		if (typeof question === "undefined"){
 			return(
-				<Image source="sadHomer.png" style={styles.image}/>
+				<Image key='img1' source={require('../../assets/sadHomer.png')} style={styles.image}/>
 			);
 		}else{
             return(
-            	<Image source={{uri: question.attachment.url}} style={styles.image}/>
+            	<Image key='img2' source={{uri: question.attachment.url}} style={styles.image}/>
 			);
 		}
 	}
@@ -30,7 +30,7 @@ export default class Content extends React.Component {
 			return null;
 		}else{
 			return(
-				<Text  style={styles.timer}>
+				<Text  key='timer' style={styles.timer}>
 					Tiempo restante:
 					{this.props.time} segundos.
 				</Text>
@@ -41,7 +41,7 @@ export default class Content extends React.Component {
 	isFinished(isFinished, question){
 			if (isFinished) {
 				return(
-					<Image source={{uri:"http://img.europapress.es/fotoweb/fotonoticia_20141218121003_800.jpg"}} style={styles.image}/>
+					<Image key='img3' source={{uri:"http://img.europapress.es/fotoweb/fotonoticia_20141218121003_800.jpg"}} style={styles.image}/>
 				);
 			}else{
 				return(
@@ -54,17 +54,17 @@ export default class Content extends React.Component {
 
 	render() {
 		return(
-			<View style={styles.content}>
+			<View key='contentView' style={styles.content}>
 			{this.isFinished(this.props.isFinished,this.props.question)}
-			<View style={styles.questionAnswerTips}>
-				<Question question={this.props.question}
+			<View key='QAT' style={styles.questionAnswerTips}>
+				<Question key='question' question={this.props.question}
 					isFinished={this.props.isFinished}/>
-				<Answer question={this.props.question}
+				<Answer key='answer' question={this.props.question}
 					onQuestionAnswer={this.props.onQuestionAnswer}
 					isFinished={this.props.isFinished}
 					score={this.props.score}
 					questions={this.props.questions}/>
-				<Tips question={this.props.question} isFinished={this.props.isFinished}/>
+				<Tips key='tipskey' question={this.props.question} isFinished={this.props.isFinished}/>
 			</View>
 				{this.showTimer(this.props.isFinished)}
 			</View>
@@ -76,7 +76,10 @@ const styles = StyleSheet.create({
 
 	},
 	image:{
-
+		maxHeight:'50%',
+		maxWidth:'50%',
+		minHeight:'25%',
+		minWidth:'25%'
 	},
 	questionAnswerTips:{
 

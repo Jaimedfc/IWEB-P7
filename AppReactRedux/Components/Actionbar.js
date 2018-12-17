@@ -30,8 +30,8 @@ export default class Actionbar extends React.Component {
 		if ( oldQuestions.length !== 0){
 			if (isFinished) {
 				return(
-					<View style={styles.actionBar}>
-						<Button buttonName="Play new game"  keyB= "ButtonNewGame" buttonFunc={ () => {
+					<View key='Actionbar1' style={styles.actionBar}>
+						<Button key='boton1' buttonName="Play new game"  keyB= "ButtonNewGame" buttonFunc={ () => {
 							return onInitQuestions();
 						}
 						}/>
@@ -40,8 +40,8 @@ export default class Actionbar extends React.Component {
 			}else{
 				return(
 
-					<View style={styles.actionBar}>
-						<Button buttonName="Previous Question" keyB= "ButtonPrevQuestion"  iCurrentQuestion={this.props.iCurrentQuestion} buttonFunc={ () => {
+					<View key='Actionbar2' style={styles.actionBar}>
+						<Button key='boton1' buttonName="Previous Question" keyB= "ButtonPrevQuestion"  iCurrentQuestion={this.props.iCurrentQuestion} buttonFunc={ () => {
 							if (iCurrentQuestion!==0){
 								return onChangeQuestion(iCurrentQuestion-1);
 							}else{
@@ -49,12 +49,12 @@ export default class Actionbar extends React.Component {
 							}
 						}
 						}/>
-						<Button buttonName="Submit" keyB= "ButtonSubmit" buttonFunc={ () => {
+						<Button key='boton2' buttonName="Submit" keyB= "ButtonSubmit" buttonFunc={ () => {
 							return onSubmit(oldQuestions);
 						}
 						}/>
 
-						<Button buttonName="Next Question" iCurrentQuestion={this.props.iCurrentQuestion} keyB= "ButtonNextQuestion" buttonFunc={ () => {
+						<Button key='boton3' buttonName="Next Question" iCurrentQuestion={this.props.iCurrentQuestion} keyB= "ButtonNextQuestion" buttonFunc={ () => {
 							if (iCurrentQuestion===(oldQuestions.length-1)){
 								return;
 							}else{
@@ -67,8 +67,8 @@ export default class Actionbar extends React.Component {
 			}
 		}else{
 			return(
-				<View style={styles.actionBar}>
-					<Button buttonName="Play" keyB="ButtonInitQuestion"  className="ActionBar" buttonFunc={ () => {
+				<View key='actionbar3' style={styles.actionBar}>
+					<Button key='boton4' buttonName="Play" keyB="ButtonInitQuestion"  className="ActionBar" buttonFunc={ () => {
 						return onInitQuestions();
 					}
 					}/>

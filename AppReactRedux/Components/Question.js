@@ -10,20 +10,20 @@ export default class Question extends React.Component {
 	gameEnded(finished,question){
 		if (finished){
 			return(
-			<Text style={styles.text}>
+			<Text key='Gz' style={styles.text}>
 				Enhorabuena, has acabado el cuestionario.
 			</Text>
 			);
 		}else{
 			if (typeof question !== "undefined"){
 				return(
-				<Text style={styles.text}>
+				<Text key="questionkey325258" style={styles.text}>
 					{question.question}
 				</Text>
 				);
 			}else{
 				return(
-				<Text style={styles.text}>
+				<Text key='loSentimos' style={styles.text}>
 					Lo sentimos mucho,
 				</Text>
 				);

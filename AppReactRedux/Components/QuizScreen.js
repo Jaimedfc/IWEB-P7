@@ -11,7 +11,7 @@ import {View} from 'react-native';
 
 
 
-export default class QuizScreen extends Component {
+class QuizScreen extends Component {
 
     componentDidMount() {
 
@@ -38,9 +38,9 @@ export default class QuizScreen extends Component {
 
   render() {
     return (
-      <View style={{flex:1, margin:10, justifyContent:'center'}}>
-        <Navbar style={{flex:1, justifyContent:'center'}}/>
-        <Game style={{flex:5, justifyContent:'center', alignContent:'center'}}
+      <View key='QuizScreenView' style={{flex:1, margin:10, justifyContent:'center'}}>
+        <Navbar key='Navbar' style={{flex:1, justifyContent:'center'}}/>
+        <Game key='Game' style={{flex:5, justifyContent:'center', alignContent:'center'}}
               question={this.props.questions[this.props.currentQuestion]}
               score={this.props.score}
               isFinished={this.props.finished}
@@ -70,4 +70,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(QuizScreen);

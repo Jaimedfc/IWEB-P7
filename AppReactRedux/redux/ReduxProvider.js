@@ -24,8 +24,8 @@ export default class ReduxProvider extends React.Component {
 
 		return (
 
-			<Provider store={ this.store}>
-				<QuizScreen/>
+			<Provider key='provider' store={ this.store}>
+				<QuizScreen key='QuizScreen'/>
 			</Provider>
 		);
 	}
