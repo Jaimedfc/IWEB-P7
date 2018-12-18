@@ -57,7 +57,7 @@ export default class Content extends React.Component {
 			<View key='contentView' style={styles.content}>
 			{this.isFinished(this.props.isFinished,this.props.question)}
 			<View key='QAT' style={styles.questionAnswerTips}>
-				<Question key='question' question={this.props.question}
+				<Question key='question' style={styles.question} question={this.props.question}
 					isFinished={this.props.isFinished}/>
 				<Answer key='answer' question={this.props.question}
 					onQuestionAnswer={this.props.onQuestionAnswer}
@@ -73,18 +73,30 @@ export default class Content extends React.Component {
 }
 const styles = StyleSheet.create({
 	content:{
-
+		flex:1,
+		margin:20,
+		justifyContent: 'space-around',
+		alignItems: 'center'
 	},
 	image:{
+		flex:4,
 		maxHeight:'50%',
-		maxWidth:'50%',
+		maxWidth:'80%',
 		minHeight:'25%',
-		minWidth:'25%'
+		minWidth:'80%',
+		borderRadius:20,
+		borderWidth: 1,
+		borderColor: '#000000',
+		backgroundColor: '#ffffff'
 	},
 	questionAnswerTips:{
+		flex:5,
+
+	},
+	question:{
 
 	},
 	timer:{
-
+		flex:1
 	}
 });

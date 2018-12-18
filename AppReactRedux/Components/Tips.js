@@ -14,10 +14,11 @@ export default class Navbar extends React.Component {
 				return (
 					<View key='tipskey1223' style={styles.box}>
 						<Text key="tipscaja" style={styles.text}>Tips:</Text>
-						<FlatList key="flatlist"
+						<FlatList
 						style={styles.list}
 						data={question.tips}
-						renderItem={({item}) => <Text key={item.length} style={styles.text}>{item}</Text>}/>
+						renderItem={({item}) => <Text style={styles.text}>{item}</Text>}
+						keyExtractor={(item, index) => index.toString()}/>
 					</View>
 				);
 			}else{
@@ -39,11 +40,11 @@ export default class Navbar extends React.Component {
 }
 const styles = StyleSheet.create({
 	text:{
-
+		fontStyle: 'italic'
 	},
 	list:{
 
 		},
 	box:{
-
+		marginTop: 20
 	}});

@@ -13,6 +13,16 @@ export default class Navbar extends React.Component {
 
 const styles = StyleSheet.create({
 	navbar: {
+		fontSize: 25,
+		color: '#2e31ff',
+		justifyContent: 'flex-start',
+		alignItems: 'flex-start',
+		textAlign: 'center',
+		//fontFamily:'Cochin',
+		fontWeight:'bold',
+		marginTop: 20,
+		marginLeft: 5,
+		marginRight: 5,
 
 	}
 })

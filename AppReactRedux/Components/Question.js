@@ -37,6 +37,8 @@ export default class Question extends React.Component {
 }
 const styles = StyleSheet.create({
 	text:{
-
+		fontSize: 20,
+		fontWeight: 'bold',
+		textAlign: 'center'
 	}
 });

@@ -45,16 +45,23 @@ export default class Answer extends React.Component {
 
 const styles = StyleSheet.create({
 	text:{
-
-	},
-	answer:{
+		fontSize: 20,
+		fontWeight: 'bold',
 
 	},
 	textInput:{
-
+		backgroundColor:'#ffffff',
+		minWidth: '60%',
+		borderWidth: 1,
+		borderColor: '#000000',
+		marginLeft: 20,
+		textAlign: 'center'
 	},
 	box:{
-
+		marginTop:20,
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		alignItems: 'center'
 	},
 	smallText:{
 

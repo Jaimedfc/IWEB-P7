@@ -33,6 +33,6 @@ export default class Actionbar extends React.Component {
 }
 const styles = StyleSheet.create({
 	button:{
-
+		borderRadius: 5
 	}
 });

@@ -24,8 +24,8 @@ export default class ReduxProvider extends React.Component {
 
 		return (
 
-			<Provider key='provider' store={ this.store}>
-				<QuizScreen key='QuizScreen'/>
+			<Provider style={{flex:1, backgroundColor: '#87CEEB'}} key='provider' store={ this.store}>
+				<QuizScreen style={{flex:1, backgroundColor: '#87CEEB'}} key='QuizScreen'/>
 			</Provider>
 		);
 	}

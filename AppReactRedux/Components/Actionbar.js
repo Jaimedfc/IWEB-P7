@@ -41,7 +41,7 @@ export default class Actionbar extends React.Component {
 				return(
 
 					<View key='Actionbar2' style={styles.actionBar}>
-						<Button key='boton1' buttonName="Previous Question" keyB= "ButtonPrevQuestion"  iCurrentQuestion={this.props.iCurrentQuestion} buttonFunc={ () => {
+						<Button key='boton1' buttonName="Previous" keyB= "ButtonPrevQuestion"  iCurrentQuestion={this.props.iCurrentQuestion} buttonFunc={ () => {
 							if (iCurrentQuestion!==0){
 								return onChangeQuestion(iCurrentQuestion-1);
 							}else{
@@ -54,7 +54,7 @@ export default class Actionbar extends React.Component {
 						}
 						}/>
 
-						<Button key='boton3' buttonName="Next Question" iCurrentQuestion={this.props.iCurrentQuestion} keyB= "ButtonNextQuestion" buttonFunc={ () => {
+						<Button key='boton3' buttonName="Next" iCurrentQuestion={this.props.iCurrentQuestion} keyB= "ButtonNextQuestion" buttonFunc={ () => {
 							if (iCurrentQuestion===(oldQuestions.length-1)){
 								return;
 							}else{
@@ -83,6 +83,9 @@ export default class Actionbar extends React.Component {
 
 const styles = StyleSheet.create({
 	actionBar:{
-
+		marginBottom:10,
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+		alignItems: 'center'
 }
 });

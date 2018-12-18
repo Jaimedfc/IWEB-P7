@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default class App extends React.Component {
   render() {
     return (
-      <ReduxProvider key='ReduxProvider'/>
+      <ReduxProvider style={styles.container} key='ReduxProvider'/>
     );
   }
 }
@@ -13,7 +13,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#87CEEB',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -38,9 +38,9 @@ class QuizScreen extends Component {
 
   render() {
     return (
-      <View key='QuizScreenView' style={{flex:1, margin:10, justifyContent:'center'}}>
-        <Navbar key='Navbar' style={{flex:1, justifyContent:'center'}}/>
-        <Game key='Game' style={{flex:5, justifyContent:'center', alignContent:'center'}}
+      <View key='QuizScreenView' style={{flex:1,flexDirection:'column', justifyContent:'space-around', alignItems:'center',backgroundColor: '#87CEEB'}}>
+        <Navbar key='Navbar' style={{ justifyContent:'flex-start'}}/>
+        <Game key='Game' style={{flex:1, justifyContent:'center', alignItems:'center'}}
               question={this.props.questions[this.props.currentQuestion]}
               score={this.props.score}
               isFinished={this.props.finished}
