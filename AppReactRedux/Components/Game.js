@@ -12,14 +12,18 @@ export default class Game extends React.Component {
 					score={this.props.score}
 					questions={this.props.questions}
 					time={this.props.time}/>
-				<Actionbar style={styles.actionbar} key='Actionbar' question={this.props.question}
+				<Actionbar style={styles.actionBar} key='Actionbar' question={this.props.question}
 					onSubmit={this.props.onSubmit}
 					onInitQuestions={this.props.onInitQuestions}
 					onChangeQuestion={this.props.onChangeQuestion}
 					iCurrentQuestion={this.props.iCurrentQuestion}
 					questions={this.props.questions}
 					score={this.props.score}
-					isFinished={this.props.isFinished}/>
+					isFinished={this.props.isFinished}
+					goBack={this.props.goBack}
+				    saveData={this.props.saveData}
+				    loadData={this.props.loadData}
+				    deleteData={this.props.deleteData}/>
 			</View>
 			);
 	}
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
 	content:{
 		flex: 9
 	},
-	actionbar:{
-		flex:1
+	actionBar:{
+		flex: 1
 	}
 });

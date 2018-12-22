@@ -3,6 +3,25 @@ import GlobalState from './reducers';
 import { createStore } from 'redux';
 import QuizScreen from '../Components/QuizScreen';
 import React from 'react';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import InitialScreen from '../Components/InitialScreen';
+
+
+const AppNavigator = createStackNavigator({
+	Initial:{
+		screen: InitialScreen
+	},
+	Quiz:{
+		screen: QuizScreen
+	}
+},{
+	initialRouteName: "Initial",
+	headerMode:'none'
+
+});
+
+const AppContainer = createAppContainer(AppNavigator);
+
 
 export default class ReduxProvider extends React.Component {
 
@@ -25,7 +44,7 @@ export default class ReduxProvider extends React.Component {
 		return (
 
 			<Provider style={{flex:1, backgroundColor: '#87CEEB'}} key='provider' store={ this.store}>
-				<QuizScreen style={{flex:1, backgroundColor: '#87CEEB'}} key='QuizScreen'/>
+				<AppContainer/>
 			</Provider>
 		);
 	}

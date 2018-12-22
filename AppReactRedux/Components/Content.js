@@ -54,49 +54,49 @@ export default class Content extends React.Component {
 
 	render() {
 		return(
-			<View key='contentView' style={styles.content}>
-			{this.isFinished(this.props.isFinished,this.props.question)}
-			<View key='QAT' style={styles.questionAnswerTips}>
-				<Question key='question' style={styles.question} question={this.props.question}
-					isFinished={this.props.isFinished}/>
-				<Answer key='answer' question={this.props.question}
-					onQuestionAnswer={this.props.onQuestionAnswer}
-					isFinished={this.props.isFinished}
-					score={this.props.score}
-					questions={this.props.questions}/>
-				<Tips key='tipskey' question={this.props.question} isFinished={this.props.isFinished}/>
-			</View>
-				{this.showTimer(this.props.isFinished)}
-			</View>
+
+			//{this.isFinished(this.props.isFinished,this.props.question)}
+				<View key='QAT' style={styles.questionAnswerTips}>
+					{this.isFinished(this.props.isFinished,this.props.question)}
+					<Question key='question' style={styles.question} question={this.props.question}
+						isFinished={this.props.isFinished}/>
+					<Answer key='answer' question={this.props.question}
+						onQuestionAnswer={this.props.onQuestionAnswer}
+						isFinished={this.props.isFinished}
+						score={this.props.score}
+						questions={this.props.questions}/>
+					{this.showTimer(this.props.isFinished)}
+					<Tips key='tipskey' question={this.props.question} isFinished={this.props.isFinished}/>
+				</View>
+
 			);
 	}
 }
 const styles = StyleSheet.create({
-	content:{
-		flex:1,
-		margin:20,
-		justifyContent: 'space-around',
-		alignItems: 'center'
-	},
 	image:{
 		flex:4,
 		maxHeight:'50%',
 		maxWidth:'80%',
 		minHeight:'25%',
 		minWidth:'80%',
-		borderRadius:20,
+		borderRadius:5,
 		borderWidth: 1,
 		borderColor: '#000000',
-		backgroundColor: '#ffffff'
+		backgroundColor: '#ffffff',
+		resizeMode: 'stretch'
+
 	},
 	questionAnswerTips:{
-		flex:5,
+		flex:1,
+		alignItems: 'center'
+
 
 	},
 	question:{
 
 	},
 	timer:{
-		flex:1
+		textAlign: 'center',
+		marginTop: 5
 	}
 });

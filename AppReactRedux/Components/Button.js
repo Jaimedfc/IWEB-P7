@@ -28,7 +28,7 @@ export default class Actionbar extends React.Component {
 	render() {
 		return(
 			<Button key={this.props.keyB} style={styles.button} accessibilityLabel={this.props.buttonName} disabled={this.desactivateButton(this.props.iCurrentQuestion)} onPress={this.props.buttonFunc} title={this.props.buttonName}/>
-			);
+		);
 	}
 }
 const styles = StyleSheet.create({
